@@ -36,12 +36,6 @@
         template:
             src: "config.php.j2"
             dest: "/var/www/html/kanboard/config.php"
-
-    -   name: Sets Apache conf file - Ubuntu
-        become: true
-        template:
-            src: "kanboard.conf.j2"
-            dest: "/etc/apache2/sites-available/kanboard.conf"
     
     -   name: Grant Permissions
         file:
