@@ -3,7 +3,7 @@
     -   name: Fetch Kanboard Official Repo
         git:
             repo: https://github.com/kanboard/kanboard.git
-            dest: /var/www/html
+            dest: /var/www/html/kanboard
             # version: master
             force: yes
 
