@@ -87,6 +87,13 @@
       when: not mysql_exists.stat.exists
       ignore_errors: yes
 
+    -   name: Absent the Irrelevant files - Ubuntu 20
+        file:
+          path: /etc/apt/sources.list.d/ansible-ubuntu-ansible-focal.list
+          state: absent
+        when:
+          - os_check.stdout | regex_search("Ubuntu 20")
+
     - name: Applying replacement on CentOS
       lineinfile:
           dest: ~/.ansible/roles/pwslab.php/vars/Debian.yml
